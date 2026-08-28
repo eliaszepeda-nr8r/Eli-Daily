@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1115" />
+  <title>Daily | Eli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PERSONAL TASK TRACKER</p>
+        <h1 id="dateHeading">Today</h1>
+      </div>
+      <button id="clearDoneBtn" class="ghost-btn" type="button">Clear completed</button>
+    </header>
+
+    <section class="focus-card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FOCUS</p>
+          <h2>Top 3</h2>
+        </div>
+        <span class="hint">If these get done, today counts.</span>
+      </div>
+      <div id="focusList" class="task-list"></div>
+      <button class="add-btn" data-list="focus" type="button">+ Add focus task</button>
+    </section>
+
+    <section class="main-grid">
+      <div class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODAY</p>
+            <h2>To Do</h2>
+          </div>
+          <span id="todayCount" class="count"></span>
+        </div>
+        <div id="todayList" class="task-list"></div>
+        <button class="add-btn" data-list="today" type="button">+ Add task</button>
+      </div>
+
+      <div class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">NOT URGENT</p>
+            <h2>Later</h2>
+          </div>
+          <span id="laterCount" class="count"></span>
+        </div>
+        <div id="laterList" class="task-list"></div>
+        <button class="add-btn" data-list="later" type="button">+ Add task</button>
+      </div>
+    </section>
+
+    <section class="notes-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BRAIN DUMP</p>
+          <h2>Notes</h2>
+        </div>
+        <span class="hint">Anything you don't want to keep in your head.</span>
+      </div>
+      <textarea id="notes" placeholder="Waiting on someone, random reminder, thing to check later..."></textarea>
+    </section>
+
+    <footer>
+      <span id="progressText">0 of 0 done</span>
+      <div class="progress-track">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </footer>
+  </main>
+
+  <template id="taskTemplate">
+    <div class="task">
+      <button class="check" type="button" aria-label="Complete task"></button>
+      <input class="task-text" type="text" placeholder="New task..." />
+      <button class="delete" type="button" aria-label="Delete task">×</button>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
